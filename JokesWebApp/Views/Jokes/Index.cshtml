@@ -1,0 +1,38 @@
+﻿@model IEnumerable<JokesWebApp.Models.Joke>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a asp-action="Create">Add Jokes ☺️</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JokeQuestion)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JokeQuestion)
+            </td>
+            
+            <td>
+                    
+                    <a asp-action="Details" asp-route-id="@item.Id"> <input type="text" value="Answer" class="btn btn-primary" /></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><input type="text" value="Delete" class="btn btn-danger" /></a>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

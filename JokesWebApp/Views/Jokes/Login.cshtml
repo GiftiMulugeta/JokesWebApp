@@ -1,0 +1,39 @@
+﻿﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/primary.cshtml";
+}
+
+<h1>Login </h1>
+<div class=""></div>
+<div class="body">
+    <form action="Verify" method="post" class="form1">
+        <div class="" id="uname">
+
+            <input type="text" name="username" placeholder="User name" required="" />
+        </div> <p></p>
+        <div class="">
+
+            <input type="password" name="password" placeholder="Password" required id="myInput" />
+        </div>
+        <p></p>
+        <div class="" id="uame">
+        <input id="check3" name="check3" type="Checkbox" value="show password" onclick="myFunction()" />
+        <label class="check" for="check3">Show Password</label>
+        </div>
+        <p></p>
+        <script>
+        function myFunction(){
+        var x = document.getElementById("myInput");
+        if(x.type === "password"){
+        x.type = "text";
+        } else{
+        x.type = "password";
+        }
+        }
+        </script>
+        <input type="submit" value="Login" class=" btn btn-primary" />
+    </form>
+</div>
